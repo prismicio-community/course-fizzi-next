@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Flight"
+						}
+					}
+				]
+			},
+			"price_copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nulla exercitation commodo duis duis eiusmod amet exercitation ex exercitation nulla non laborum. Id enim nulla cupidatat nisi commodo sint sint Lorem. Ex exercitation do velit fugiat."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
