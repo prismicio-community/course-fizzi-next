@@ -1,14 +1,9 @@
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { BigTextData } from "@/data/content";
 
-/**
- * Props for `BigText`.
- */
-export type BigTextProps = SliceComponentProps<Content.BigTextSlice>;
+export type BigTextProps = {
+  slice: BigTextData;
+};
 
-/**
- * Component for "BigText" Slices.
- */
 const BigText = ({ slice }: BigTextProps): JSX.Element => {
   return (
     <section

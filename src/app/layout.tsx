@@ -1,8 +1,5 @@
 import localFont from "next/font/local";
 
-import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "@/prismicio";
-
 import "./app.css";
 import Header from "@/components/Header";
 import ViewCanvas from "@/components/ViewCanvas";
@@ -30,7 +27,6 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
-      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }

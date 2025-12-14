@@ -1,11 +1,5 @@
 "use client";
 
-import { Content } from "@prismicio/client";
-import {
-  PrismicRichText,
-  PrismicText,
-  SliceComponentProps,
-} from "@prismicio/react";
 import { Center, Environment, View } from "@react-three/drei";
 import { useRef, useState } from "react";
 import clsx from "clsx";
@@ -16,6 +10,7 @@ import FloatingCan from "@/components/FloatingCan";
 import { SodaCanProps } from "@/components/SodaCan";
 import { ArrowIcon } from "./ArrowIcon";
 import { WavyCircles } from "./WavyCircles";
+import { CarouselData } from "@/data/content";
 
 const SPINS_ON_CHANGE = 8;
 const FLAVORS: {
@@ -34,14 +29,10 @@ const FLAVORS: {
   { flavor: "watermelon", color: "#4B7002", name: "Watermelon Crush" },
 ];
 
-/**
- * Props for `Carousel`.
- */
-export type CarouselProps = SliceComponentProps<Content.CarouselSlice>;
+export type CarouselProps = {
+  slice: CarouselData;
+};
 
-/**
- * Component for "Carousel" Slices.
- */
 const Carousel = ({ slice }: CarouselProps): JSX.Element => {
   const [currentFlavorIndex, setCurrentFlavorIndex] = useState(0);
   const sodaCanRef = useRef<Group>(null);
@@ -91,7 +82,7 @@ const Carousel = ({ slice }: CarouselProps): JSX.Element => {
       <WavyCircles className="absolute left-1/2 top-1/2 h-[120vmin] -translate-x-1/2 -translate-y-1/2 text-[#710523]" />
 
       <h2 className="relative text-center text-5xl font-bold">
-        <PrismicText field={slice.primary.heading} />
+        {slice.heading}
       </h2>
 
       <div className="grid grid-cols-[auto,auto,auto] items-center">
@@ -132,7 +123,7 @@ const Carousel = ({ slice }: CarouselProps): JSX.Element => {
           <p>{FLAVORS[currentFlavorIndex].name}</p>
         </div>
         <div className="mt-2 text-2xl font-normal opacity-90">
-          <PrismicRichText field={slice.primary.price_copy} />
+          <p>{slice.price_copy}</p>
         </div>
       </div>
     </section>
